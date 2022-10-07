@@ -1,0 +1,45 @@
+Kafka Kurulum için herhangi bir Vm Makinada
+
+terminal aç wget https://dlcdn.apache.org/kafka/3.2.1/kafka_2.13-3.2.1.tgz
+#indirdiğimiz dosyayı tar ile aç
+
+$ tar -xzf kafka_2.13-3.2.1.tgz
+$ cd kafka_2.13-3.2.1
+
+zookeeper gerkli cluster syn için bir terminalde (bunların hepsi kafka directorysinden)
+$ bin/zookeeper-server-start.sh config/zookeeper.properties
+
+başka bir terminal aç ve kafka servisini start et
+
+$ bin/kafka-server-start.sh config/server.properties
+
+bir topic yaratmak
+
+$ bin/kafka-topics.sh --create --topic deneme --bootstrap-server localhost:9092
+
+mesaj publish etmek için
+
+$ bin/kafka-console-producer.sh --topic deneme --bootstrap-server localhost:9092
+#dinlemeye başlar ve sizden mesajları bekler. alt alta mesajları yazabilirsiniz.
+
+
+#başka bir terminalden gelen mesajları anında görüntülemek için.
+$ bin/kafka-console-consumer.sh --topic deneme --from-beginning --bootstrap-server localhost:9092
+
+
+
+PUBSUB
+
+topic yaratmayı derste yaptık.
+
+yarattıgınız topic için terminalden
+
+gcloud pubsub subscriptions create worker-subscription --topic deneme
+
+#kendimiz manuel mesaj üretme alternatif
+
+gcloud pubsub topics publish deneme --message "zekeriya besiroglu"
+
+#başka bir sessiondan bu topicdekileri okumak için
+
+gcloud pubsub subscriptions pull deneme --auto-ack

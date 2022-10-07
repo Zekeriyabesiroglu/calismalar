@@ -1,0 +1,465 @@
+select * from hr.employees;
+
+describe hr.employees
+
+
+select table_name,owner from all_tables;
+
+select count(*) from products;
+
+select count(*) from sh.products;
+
+select table_name,owner from all_tables;
+
+select first_name,salary from hr.employees;
+
+select first_name,salary,salary*12 from hr.employees;
+
+select * from hr.employees;
+
+describe hr.employees
+
+
+select table_name,owner from all_tables. user_tables dba_tables
+
+select count(*) from sh.products
+
+select select * from hr.employees
+
+select first_name,salary,100+salary*12 from hr.employees;
+
+select first_name,salary,100+salary*12 from hr.employees;
+
+select first_name,salary,(100+salary)*12 from hr.employees;
+
+select last_name,salary,commission_pct from hr.employees;
+
+select last_name,salary,commission_pct+100 from hr.employees;
+
+select last_name,salary,commission_pct+100 as yeni from hr.employees
+;
+
+select last_name,salary,commission_pct+100 yeni from hr.employees
+;
+
+select last_name,salary,commission_pct+100 as yeni maas from hr.employees
+;
+
+select last_name,salary,commission_pct+100 as yeni_maas from hr.employees
+;
+
+select last_name,salary,commission_pct+100 as "yeni maas" from hr.employees
+;
+
+select last_name,salary,commission_pct+100  "yeni maas" from hr.employees
+;
+
+select last_name,salary,commission_pct+100  "Yeni mAAs" from hr.employees
+;
+
+select last_name,salary,commission_pct+100  'Yeni mAAs' from hr.employees
+;
+
+select first_name,last_name from hr.employees
+;
+
+select first_name||'  '|| last_name from hr.employees
+;
+
+select first_name||'  '|| last_name "ad soyad" from hr.employees
+;
+
+select first_name||' --- '|| last_name "ad soyad" from hr.employees
+;
+
+select first_name|| q'[  'nin : ]' || last_name from hr.employees
+;
+
+select first_name||' 'in--- '|| last_name "ad soyad" from hr.employees
+;
+
+select first_name||"  "|| last_name "ad soyad" from hr.employees
+;
+
+select department_id from hr.employees
+;
+
+select distinct(department_id) from hr.employees
+;
+
+desc hr.employees
+
+
+select * from hr.employees where salary>5000
+;
+
+select * from hr.employees where last_name=king
+;
+
+select * from hr.employees where last_name="king"
+;
+
+select * from hr.employees;
+
+desc hr.employees
+
+
+select table_name,owner from all_tables. user_tables dba_tables
+
+select count(*) from sh.products
+
+select select * from hr.employees
+
+select first_name,salary,100+salary*12 from hr.employees
+
+select first_name,salary,(100+salary)*12 from hr.employees
+
+select last_name,salary,commission_pct+100 as yeni from hr.employees
+
+select last_name,salary,commission_pct+100 yeni from hr.employees
+
+select last_name,salary,commission_pct+100  "Yeni mAAs" from hr.employees
+
+select last_name,salary,commission_pct+100  "Yeni mAAs" from hr.employees
+
+
+select first_name,last_name from hr.employees
+
+select first_name||'  '|| last_name "ad soyad" from hr.employees
+
+select first_name|| q'[  'nin : ]' || last_name from hr.employees
+
+select department_id from hr.employees
+
+select distinct(department_id) from hr.employees
+
+select * from hr.employees where salary>5000
+
+select * from hr.employees where last_name='king'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+
+select * from hr.employees where last_name='king'
+;
+
+select * from hr.employees where last_name='King'
+;
+
+select * from hr.employees where salary between 5000 and 10000
+;
+
+select * from hr.employees where salary in (5000,6000,8400)
+;
+
+select * from hr.employees where last_name like 'K%'
+;
+
+select * from hr.employees where last_name like 'K%r'
+;
+
+select * from hr.employees where last_name like 'K_m%'
+;
+
+select * from hr.employees where salary not in (5000,6000,8400)
+;
+
+select * from hr.employees where manager_id=null
+;
+
+select * from hr.employees where manager_id is null
+;
+
+select * from hr.employees where salary>=10000
+and job_id like '%MAN%';
+
+select * from hr.employees where salary>=10000
+or job_id like '%MAN%';
+
+select * from hr.employees where department_id=60
+or department_id=80
+and salary >10000;
+
+select * from hr.employees where (department_id=60
+or department_id=80)
+and salary >10000;
+
+select * from hr.employees where salary >10000
+and department_id=80
+or department_id=60;
+
+select * from hr.employees where salary >10000
+and department_id=80
+or department_id=60
+order by salary;
+
+select * from hr.employees where salary >10000
+and department_id=80
+or department_id=60
+order by salary desc;
+
+select * from hr.employees where salary >10000
+and department_id=80
+or department_id=60
+order by 8 desc;
+
+set autotrace traceonly explain
+
+
+set autotrace traceonly explain
+
+
+set autotrace traceonly explain
+
+
+set autotrace on
+
+
+select employee_id,fist_name from hr.employees order by employee_id
+fetch first 10 rows only;
+
+elect employee_id,first_name from hr.employees order by employee_id
+
+
+fetch first 10 rows only
+
+
+select employee_id,first_name from hr.employees order by employee_id
+fetch first 10 rows only;
+
+select employee_id,first_name from hr.employees order by employee_id
+offset 5 rows fetch next 5 rows only;
+
+select employee_id,first_name from hr.employees  where last_name='king'
+;
+
+select employee_id,first_name from hr.employees  where lower(last_name)='king'
+;
+
+select employee_id,instr(last_name,'a') "a varmi" ,substr(job_id,1,4) from hr.employees
+;
+
+select employee_id,last_name,instr(last_name,'a') "a varmi" ,job_id,substr(job_id,1,4) from hr.employees
+;
+
+select employee_id,last_name,instr(last_name,'a') "a varmi" ,job_id,substr(job_id,4) from hr.employees
+;
+
+select round(45.923,2),round(45.923,0),round(45.923,-1) from dual
+;
+
+select round(45.923,2),trunc(45.923,0),round(45.923,-1) from dual
+;
+
+select round(45.923,2),trunc(45.923,0),trunc(45.923,-1) from dual
+;
+
+desc dual
+
+
+select 6*8 from dual
+;
+
+select sysdate from dual
+;
+
+select 'zekeriya besiroglu' as "kazanan" from dual
+;
+
+select * from hr.employees;
+
+desc hr.employees
+
+
+select table_name,owner from all_tables. user_tables dba_tables
+
+select count(*) from sh.products
+
+select select * from hr.employees
+
+select first_name,salary,100+salary*12 from hr.employees
+
+select first_name,salary,(100+salary)*12 from hr.employees
+
+select last_name,salary,commission_pct+100 as yeni from hr.employees
+
+select last_name,salary,commission_pct+100 yeni from hr.employees
+
+select last_name,salary,commission_pct+100  "Yeni mAAs" from hr.employees
+
+select last_name,salary,commission_pct+100  "Yeni mAAs" from hr.employees
+
+
+select first_name,last_name from hr.employees
+
+select first_name||'  '|| last_name "ad soyad" from hr.employees
+
+select first_name|| q'[  'nin : ]' || last_name from hr.employees
+
+select department_id from hr.employees
+
+select distinct(department_id) from hr.employees
+
+select * from hr.employees where salary>5000
+
+select * from hr.employees where last_name='King'
+
+select * from hr.employees where salary between 5000 and 10000
+
+select * from hr.employees where salary not in (5000,6000,8400)
+
+select * from hr.employees where last_name like 'K_m%'
+
+select * from hr.employees where manager_id is null
+
+select * from hr.employees where salary>=10000
+or job_id like '%MAN%'
+
+select * from hr.employees where (department_id=60
+or department_id=80)
+and salary >10000
+
+select * from hr.employees where salary >10000
+and department_id=80
+or department_id=60
+order by 8 desc
+
+set autotrace on
+
+select employee_id,first_name from hr.employees order by employee_id
+fetch first 10 rows only
+
+select employee_id,first_name from hr.employees order by employee_id
+offset 5 rows fetch next 5 rows only
+
+
+select employee_id,first_name from hr.employees  where lower(last_name)='king'
+
+select employee_id,last_name,instr(last_name,'a') "a varmi" ,job_id,substr(job_id,4) from hr.employees
+
+
+select round(45.923,2),trunc(45.923,0),trunc(45.923,-1) from dual
+
+desc dual
+
+select 6*8 from dual
+
+select sysdate from dual
+
+select 'zekeriya besiroglu' as "kazanan" from dual
+
+select employee_id,last_name from hr.employees where mod(salary,1000)=0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;
+
+select employee_id,last_name from hr.employees where mod(salary,10000)=0
+;
+
+select employee_id,last_name,salary from hr.employees where mod(salary,10000)=0
+;
+
+select employee_id,last_name,mod(salary,700) from hr.employees
+;
+
+select employee_id,last_name,mod(salary,700),salary from hr.employees
+;
+
+select sysdate from dual
+;
+
+select current_timestamp from dual
+;
+
+select last_name, hire_date from hr.employees
+;
+
+select last_name, sysdate-hire_date from hr.employees
+;
+
+select last_name, (sysdate-hire_date)/365 from hr.employees
+;
+
+select sysdate,sysdate+1,sysdate+7 from dual
+;
+
+select months_between(sysdate,hire_date),employee_id from hr.employeees
+;
+
+select months_between(sysdate,hire_date),employee_id from hr.employees
+;
+
+select add_months(sysdate,120) from dual
+;
+
+select next_day(sysdate,'FRIDAY') from dual
+;
+
+select last_day(sysdate) from dual
+;
+
+select round(sysdate,'MONTH') from dual
+;
+
+select next_day((sysdate-7),'FRIDAY') from dual
+;
+
+select round(sysdate,'MONTH') from dual
+;
+
+select round(sysdate,'YEAR') from dual
+;
